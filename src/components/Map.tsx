@@ -1,8 +1,6 @@
 import React, { FC, useRef, useCallback, memo } from 'react'
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api'
 
-import { defaultData } from '../assets/data'
-
 import { IItem } from '../types/types'
 
 const containerStyle = {
@@ -35,7 +33,7 @@ const Map: FC<IMap> = ({ itemList, setItemList, dataItem }) => {
     mapRef.current = map;
   }, []);
 
-  const onUnmount = useCallback((map: any) => {
+  const onUnmount = useCallback(() => {
     mapRef.current = undefined;
   }, []);
   
